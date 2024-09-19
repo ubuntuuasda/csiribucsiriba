@@ -1,0 +1,148 @@
+@import url(https://raw.githubusercontent.com/ubuntuuasda/sad/refs/heads/main/sadd.css);
+@import url(https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap);
+body,
+h1,
+h2,
+h3,
+h4 {
+  font-family: Figtree, sans-serif;
+}
+:root {
+  --accent: 255, 255, 255;
+  --accent-off: 36, 36, 36;
+  --dark: 24, 24, 24;
+  --darkest: 12, 12, 12;
+  --dark-highlight: 48, 48, 48;
+  --dark-apparent: 43, 43, 43;
+  --white: 243, 242, 243;
+  --white-off: 207, 221, 233;
+  --jade-green: 0, 172, 111;
+  --honey-yellow: 255, 194, 85;
+  --cherry-red: 212, 51, 83;
+  --rounding: 12px;
+  --rounding-alt: 9px;
+  --rounding-large: 24px;
+  --rounding-circle: 100px;
+}
+@media only screen and (max-device-width: 767px) {
+  .featurediframe {
+    height: 33vh !important;
+  }
+}
+.backdropImage {
+  filter: blur(5px) saturate(120%) contrast(120%) brightness(120%);
+  mask-image: linear-gradient(to right, transparent, black),
+    linear-gradient(to top, transparent, black);
+  -webkit-mask-image: linear-gradient(to right, transparent, black),
+    linear-gradient(to top, transparent, black);
+  mask-composite: source-in;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  animation: 0.5s ease-in-out both backdrop-fadein;
+}
+.card.show-animation:focus > .cardBox {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.formDialogFooter-clear,
+.formDialogHeader-clear,
+.headerRight .paper-icon-button-light:focus,
+.headerRight .paper-icon-button-light:focus:not(:disabled),
+.headerRight .paper-icon-button-light:hover,
+.headerRight .paper-icon-button-light:hover:not(:disabled),
+.innerCardFooterClear,
+.skinHeader {
+  background-color: transparent !important;
+}
+/* Mobil kinézet beillesztése */
+#itemDetailPage .itemName.infoText.parentNameLast > bdi:first-child,
+#itemDetailPage .parentName > bdi:first-child {
+  display: none;
+}
+.hide + .detailPageWrapperContainer .itemName > bdi:first-child,
+.hide + .parentName > bdi:first-child {
+  display: block !important;
+}
+@media only screen and (orientation: portrait) {
+  .layout-mobile .itemBackdrop {
+    position: relative;
+    background-size: cover;
+    height: 50vh;
+    margin-top: 0;
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      rgba(var(--dark-apparent), 1) 10%,
+      rgba(var(--dark-apparent), 0) 90%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      rgba(var(--dark-apparent), 1) 10%,
+      rgba(var(--dark-apparent), 0) 90%
+    );
+  }
+  .layout-mobile {
+    position: relative;
+  }
+  .layout-mobile .detailLogo {
+    display: block;
+    width: 25em;
+    position: absolute;
+    left: 50%;
+    top: 30vh;
+    transform: translateX(-50%);
+  }
+  .layout-mobile .mainDetailButtons {
+    margin-top: 2em;
+    padding-left: 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .layout-mobile .btnPlay {
+    border-radius: 2em;
+    width: 100% !important;
+    background-color: #fff;
+    color: #000;
+    padding: 0.6em !important;
+    margin-bottom: 1em !important;
+  }
+  .layout-mobile .libraryPage .btnPlay {
+    margin-right: 0 !important;
+  }
+  .layout-mobile .btnPlay::after {
+    content: attr(title);
+    margin: 0 10px 0 2px;
+    color: #000;
+  }
+  .layout-mobile .btnPlay.detailButton {
+    flex-direction: row;
+  }
+  .layout-mobile .btnReplay::after,
+  .layout-mobile .btnShuffle::after {
+    content: attr(title);
+    color: #fff;
+    font-weight: 400;
+  }
+  .layout-mobile .btnMoreCommands::after,
+  .layout-mobile .btnPlayTrailer::after,
+  .layout-mobile .btnPlaystate::after,
+  .layout-mobile .btnUserRating::after {
+    content: "";
+    color: #fff;
+    font-weight: 400;
+  }
+  .layout-mobile .btnMoreCommands .detailButton-icon,
+  .layout-mobile .btnPlayTrailer .detailButton-icon,
+  .layout-mobile .btnPlaystate .detailButton-icon,
+  .layout-mobile .btnReplay .detailButton-icon,
+  .layout-mobile .btnShuffle .detailButton-icon,
+  .layout-mobile .btnUserRating .detailButton-icon {
+    background-color: #ffffff21;
+    border-radius: 50%;
+    padding: 0.25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
